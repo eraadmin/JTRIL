@@ -1,0 +1,91 @@
+prompt --application/pages/page_00156
+begin
+--   Manifest
+--     PAGE: 00156
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>100100
+,p_default_application_id=>100250
+,p_default_id_offset=>0
+,p_default_owner=>'ORBRGS'
+);
+wwv_flow_api.create_page(
+ p_id=>156
+,p_user_interface_id=>wwv_flow_api.id(1581890319240888879)
+,p_name=>'Page'
+,p_step_title=>'Page'
+,p_reload_on_submit=>'A'
+,p_warn_on_unsaved_changes=>'N'
+,p_autocomplete_on_off=>'ON'
+,p_css_file_urls=>'#WORKSPACE_IMAGES#accordion-nav.css'
+,p_step_template=>wwv_flow_api.id(47564929163858117)
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_help_text=>'No help is available for this page.'
+,p_last_updated_by=>'RILADM'
+,p_last_upd_yyyymmddhh24miss=>'20161129124816'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(82386743219298445)
+,p_plug_name=>'a'
+,p_region_name=>'accordion'
+,p_region_template_options=>'#DEFAULT#'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_api.id(82385597126275405)
+,p_plug_display_sequence=>10
+,p_plug_query_num_rows=>15
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+,p_attribute_03=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(82386968733299783)
+,p_plug_name=>'b'
+,p_parent_plug_id=>wwv_flow_api.id(82386743219298445)
+,p_region_template_options=>'#DEFAULT#:t-Region--hiddenOverflow'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_api.id(47588528672858186)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'SUB_REGIONS'
+,p_plug_query_num_rows=>15
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+,p_attribute_03=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(82387313465300911)
+,p_plug_name=>'c'
+,p_parent_plug_id=>wwv_flow_api.id(82386743219298445)
+,p_region_template_options=>'#DEFAULT#:t-Region--hiddenOverflow'
+,p_escape_on_http_output=>'Y'
+,p_plug_template=>wwv_flow_api.id(47588528672858186)
+,p_plug_display_sequence=>30
+,p_plug_display_point=>'SUB_REGIONS'
+,p_plug_query_num_rows=>15
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+,p_attribute_03=>'Y'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(82395195916483248)
+,p_plug_name=>'acor'
+,p_region_template_options=>'#DEFAULT#:t-Form--leftLabels'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(60228630206866564)
+,p_plug_display_sequence=>40
+,p_list_id=>wwv_flow_api.id(82408676533636645)
+,p_plug_source_type=>'NATIVE_LIST'
+,p_list_template_id=>wwv_flow_api.id(82405152879630410)
+,p_plug_query_num_rows=>15
+,p_plug_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_plug_query_show_nulls_as=>' - '
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_plug_footer=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'<i>A jQuery Accordion-like navigation menu. <a href="http://apexplained.wordpress.com/2012/08/12/creating-a-jquery-accordion-like-navigation-menu/" target="_blank">Go to blog post ></a></i>',
+'<br/><br/>'))
+);
+wwv_flow_api.component_end;
+end;
+/

@@ -1,0 +1,353 @@
+prompt --application/pages/page_00063
+begin
+--   Manifest
+--     PAGE: 00063
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>100100
+,p_default_application_id=>100250
+,p_default_id_offset=>0
+,p_default_owner=>'ORBRGS'
+);
+wwv_flow_api.create_page(
+ p_id=>63
+,p_user_interface_id=>wwv_flow_api.id(1581890319240888879)
+,p_tab_set=>'TS1'
+,p_name=>'Gate Pass Report'
+,p_step_title=>'Gate Pass Report'
+,p_reload_on_submit=>'A'
+,p_warn_on_unsaved_changes=>'N'
+,p_autocomplete_on_off=>'ON'
+,p_page_template_options=>'#DEFAULT#'
+,p_nav_list_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_help_text=>'No help is available for this page.'
+,p_last_updated_by=>'RILADM'
+,p_last_upd_yyyymmddhh24miss=>'20161129124815'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(66528823246322712)
+,p_plug_name=>'Gate Pass'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(47588528672858186)
+,p_plug_display_sequence=>30
+,p_plug_display_point=>'BODY_3'
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'SELECT "ROWID", "DOCNUMBR", "ITEMCODE","ITEMLONG", "DOCTDATE", "SALERATE",:p63_compcode asd, :company_name company,',
+'       "SMANCODE", dfn_customer_name (compcode, partycde) "Customer Name"',
+'  FROM "#OWNER#"."NMDEVREC"',
+' WHERE compcode = :p63_compcode',
+'   AND docnumbr = NVL (:p63_docnumbr, docnumbr)',
+'   AND docttype = NVL (:p63_doctype, ''GP'')',
+'   AND subttype = NVL (:p63_subtype, subttype)'))
+,p_plug_source_type=>'NATIVE_IR'
+,p_ajax_items_to_submit=>'P63_COMPCODE,P63_DOCNUMBR,P63_DOCTYPE,P63_SUBTYPE'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(66529016804322713)
+,p_name=>'Gate Pass'
+,p_max_row_count=>'1000000'
+,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
+,p_no_data_found_message=>'No data found.'
+,p_allow_report_categories=>'N'
+,p_show_nulls_as=>'-'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_fixed_header=>'NONE'
+,p_lazy_loading=>false
+,p_show_detail_link=>'C'
+,p_show_pivot=>'N'
+,p_show_calendar=>'N'
+,p_download_formats=>'CSV:HTML'
+,p_enable_mail_download=>'Y'
+,p_detail_link=>'f?p=&APP_ID.:64:&SESSION.::&DEBUG.::P64_ROWID:#ROWID#'
+,p_detail_link_text=>'<img src="#IMAGE_PREFIX#edit_big.gif"  border="0">'
+,p_allow_exclude_null_values=>'N'
+,p_allow_hide_extra_columns=>'N'
+,p_icon_view_columns_per_row=>1
+,p_owner=>'RILADM'
+,p_internal_uid=>11977603117545349
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66529118122322731)
+,p_db_column_name=>'ROWID'
+,p_display_order=>1
+,p_column_identifier=>'A'
+,p_column_label=>'ROWID'
+,p_allow_sorting=>'N'
+,p_allow_filtering=>'N'
+,p_allow_highlighting=>'N'
+,p_allow_ctrl_breaks=>'N'
+,p_allow_aggregations=>'N'
+,p_allow_computations=>'N'
+,p_allow_charting=>'N'
+,p_allow_group_by=>'N'
+,p_allow_pivot=>'N'
+,p_column_type=>'OTHER'
+,p_display_text_as=>'HIDDEN'
+,p_tz_dependent=>'N'
+,p_static_id=>'ROWID'
+,p_rpt_show_filter_lov=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66540626275491536)
+,p_db_column_name=>'DOCNUMBR'
+,p_display_order=>2
+,p_column_identifier=>'BS'
+,p_column_label=>'Gate Pass No'
+,p_allow_pivot=>'N'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+,p_static_id=>'DOCNUMBR'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66530540168322748)
+,p_db_column_name=>'ITEMLONG'
+,p_display_order=>3
+,p_column_identifier=>'O'
+,p_column_label=>'Item Description'
+,p_allow_pivot=>'N'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+,p_static_id=>'ITEMLONG'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66529628193322743)
+,p_db_column_name=>'DOCTDATE'
+,p_display_order=>8
+,p_column_identifier=>'F'
+,p_column_label=>'Date'
+,p_allow_pivot=>'N'
+,p_column_type=>'DATE'
+,p_tz_dependent=>'N'
+,p_static_id=>'DOCTDATE'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66529819549322745)
+,p_db_column_name=>'SMANCODE'
+,p_display_order=>10
+,p_column_identifier=>'H'
+,p_column_label=>'Sales Man'
+,p_allow_pivot=>'N'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+,p_static_id=>'SMANCODE'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66542723132644902)
+,p_db_column_name=>'ASD'
+,p_display_order=>72
+,p_column_identifier=>'BT'
+,p_column_label=>'Asd'
+,p_allow_pivot=>'N'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+,p_static_id=>'ASD'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66544216182708987)
+,p_db_column_name=>'COMPANY'
+,p_display_order=>73
+,p_column_identifier=>'BU'
+,p_column_label=>'Company'
+,p_allow_pivot=>'N'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+,p_static_id=>'COMPANY'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66553216241696553)
+,p_db_column_name=>'Customer Name'
+,p_display_order=>74
+,p_column_identifier=>'BV'
+,p_column_label=>'Customer Name'
+,p_allow_pivot=>'N'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+,p_static_id=>'Customer Name'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66553845737743639)
+,p_db_column_name=>'ITEMCODE'
+,p_display_order=>75
+,p_column_identifier=>'BW'
+,p_column_label=>'Itemcode'
+,p_allow_pivot=>'N'
+,p_column_type=>'STRING'
+,p_tz_dependent=>'N'
+,p_static_id=>'ITEMCODE'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(66554028700751525)
+,p_db_column_name=>'SALERATE'
+,p_display_order=>76
+,p_column_identifier=>'BX'
+,p_column_label=>'Salerate'
+,p_allow_pivot=>'N'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+,p_tz_dependent=>'N'
+,p_static_id=>'SALERATE'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(66536814064324364)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'119855'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_display_rows=>15
+,p_report_columns=>'DOCTDATE:SMANCODE:ITEMLONG:ASD:COMPANY:Customer Name:ITEMCODE:SALERATE'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(66537434412349166)
+,p_plug_name=>'Parameter for Gate Pass Report'
+,p_region_template_options=>'#DEFAULT#'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(47587389655858184)
+,p_plug_display_sequence=>20
+,p_plug_display_point=>'BODY_3'
+,p_plug_query_headings_type=>'QUERY_COLUMNS'
+,p_plug_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
+,p_plug_query_show_nulls_as=>' - '
+,p_pagination_display_position=>'BOTTOM_RIGHT'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+,p_attribute_03=>'N'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(66536525629322785)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(66528823246322712)
+,p_button_name=>'CREATE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(47630389996858357)
+,p_button_image_alt=>'Create'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=&APP_ID.:64:&SESSION.::&DEBUG.:64'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66538136079365448)
+,p_name=>'P63_COMPCODE'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(66537434412349166)
+,p_item_default=>'100'
+,p_item_default_type=>'EXPRESSION'
+,p_item_default_language=>'PLSQL'
+,p_prompt=>'Company Code'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_cMaxlength=>4000
+,p_cHeight=>1
+,p_cAttributes=>'nowrap'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(47629825263858320)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66538338347365448)
+,p_name=>'P63_DOCNUMBR'
+,p_item_sequence=>20
+,p_item_plug_id=>wwv_flow_api.id(66537434412349166)
+,p_prompt=>'Document Number'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_cMaxlength=>4000
+,p_cHeight=>1
+,p_cAttributes=>'nowrap'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(47629825263858320)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66538531264365448)
+,p_name=>'P63_DOCTYPE'
+,p_item_sequence=>30
+,p_item_plug_id=>wwv_flow_api.id(66537434412349166)
+,p_prompt=>'Document Type'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_cMaxlength=>4000
+,p_cHeight=>1
+,p_cAttributes=>'nowrap'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(47629825263858320)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66538744564365448)
+,p_name=>'P63_SUBTYPE'
+,p_item_sequence=>40
+,p_item_plug_id=>wwv_flow_api.id(66537434412349166)
+,p_prompt=>'Sub Type'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_cMaxlength=>4000
+,p_cHeight=>1
+,p_cAttributes=>'nowrap'
+,p_label_alignment=>'RIGHT'
+,p_field_template=>wwv_flow_api.id(47629825263858320)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(66542935413654467)
+,p_name=>'P63_CUSTOMER_NAME'
+,p_item_sequence=>50
+,p_item_plug_id=>wwv_flow_api.id(66537434412349166)
+,p_item_default=>':company_name'
+,p_item_default_type=>'EXPRESSION'
+,p_item_default_language=>'PLSQL'
+,p_prompt=>'Customer Name'
+,p_display_as=>'NATIVE_TEXT_FIELD'
+,p_cSize=>30
+,p_cMaxlength=>4000
+,p_cHeight=>1
+,p_label_alignment=>'RIGHT'
+,p_field_alignment=>'LEFT-CENTER'
+,p_field_template=>wwv_flow_api.id(47629825263858320)
+,p_item_template_options=>'#DEFAULT#'
+,p_lov_display_extra=>'YES'
+,p_protection_level=>'S'
+,p_encrypt_session_state_yn=>'N'
+,p_attribute_01=>'N'
+,p_attribute_02=>'N'
+,p_attribute_04=>'TEXT'
+,p_attribute_05=>'NONE'
+);
+wwv_flow_api.component_end;
+end;
+/

@@ -1,0 +1,295 @@
+prompt --application/shared_components/user_interface/themes
+begin
+--   Manifest
+--     THEME: 100250
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>100100
+,p_default_application_id=>100250
+,p_default_id_offset=>0
+,p_default_owner=>'ORBRGS'
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(47632184928858406)
+,p_theme_id=>111
+,p_theme_name=>'Universal Theme'
+,p_theme_internal_name=>'UNIVERSAL_THEME'
+,p_ui_type_name=>'DESKTOP'
+,p_navigation_type=>'L'
+,p_nav_bar_type=>'LIST'
+,p_is_locked=>false
+,p_default_page_template=>wwv_flow_api.id(47564929163858117)
+,p_default_dialog_template=>wwv_flow_api.id(47561185048858115)
+,p_error_template=>wwv_flow_api.id(47555220572858111)
+,p_printer_friendly_template=>wwv_flow_api.id(47564929163858117)
+,p_breadcrumb_display_point=>'REGION_POSITION_01'
+,p_sidebar_display_point=>'REGION_POSITION_02'
+,p_login_template=>wwv_flow_api.id(47555220572858111)
+,p_default_button_template=>wwv_flow_api.id(47630535519858357)
+,p_default_region_template=>wwv_flow_api.id(47588528672858186)
+,p_default_chart_template=>wwv_flow_api.id(47588528672858186)
+,p_default_form_template=>wwv_flow_api.id(47588528672858186)
+,p_default_reportr_template=>wwv_flow_api.id(47588528672858186)
+,p_default_tabform_template=>wwv_flow_api.id(47588528672858186)
+,p_default_wizard_template=>wwv_flow_api.id(47588528672858186)
+,p_default_menur_template=>wwv_flow_api.id(47595508514858189)
+,p_default_listr_template=>wwv_flow_api.id(47588528672858186)
+,p_default_irr_template=>wwv_flow_api.id(47587389655858184)
+,p_default_report_template=>wwv_flow_api.id(47606600251858234)
+,p_default_label_template=>wwv_flow_api.id(47629908389858329)
+,p_default_menu_template=>wwv_flow_api.id(47631212475858359)
+,p_default_calendar_template=>wwv_flow_api.id(47631311915858362)
+,p_default_list_template=>wwv_flow_api.id(47620987743858279)
+,p_default_nav_list_template=>wwv_flow_api.id(47627850854858301)
+,p_default_top_nav_list_temp=>wwv_flow_api.id(47627850854858301)
+,p_default_side_nav_list_temp=>wwv_flow_api.id(47625858577858293)
+,p_default_nav_list_position=>'SIDE'
+,p_default_dialogbtnr_template=>wwv_flow_api.id(47571616129858176)
+,p_default_dialogr_template=>wwv_flow_api.id(47571367397858173)
+,p_default_option_label=>wwv_flow_api.id(47629908389858329)
+,p_default_header_template=>wwv_flow_api.id(47571367397858173)
+,p_default_required_label=>wwv_flow_api.id(47630164134858329)
+,p_default_page_transition=>'NONE'
+,p_default_popup_transition=>'NONE'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(111),'#IMAGE_PREFIX#themes/theme_42/1.0/')
+,p_files_version=>67
+,p_icon_library=>'FONTAPEX'
+,p_javascript_file_urls=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.apexTabs#MIN#.js?v=#APEX_VERSION#',
+'#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.stickyWidget#MIN#.js?v=#APEX_VERSION#',
+'#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#widget.stickyTableHeader#MIN#.js?v=#APEX_VERSION#',
+'#IMAGE_PREFIX#libraries/apex/#MIN_DIRECTORY#tooltipManager#MIN#.js?v=#APEX_VERSION#',
+'#HAMMERJS_URL#',
+'#THEME_IMAGES#js/modernizr-custom#MIN#.js?v=#APEX_VERSION#',
+'#IMAGE_PREFIX#plugins/com.oracle.apex.carousel/1.0/com.oracle.apex.carousel#MIN#.js?v=#APEX_VERSION#',
+'#THEME_IMAGES#js/theme42#MIN#.js?v=#APEX_VERSION#'))
+,p_css_file_urls=>'#THEME_IMAGES#css/Core#MIN#.css?v=#APEX_VERSION#'
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(51070199051315224)
+,p_theme_id=>151
+,p_theme_name=>'Orbits'
+,p_theme_internal_name=>'ORBITS'
+,p_ui_type_name=>'DESKTOP'
+,p_navigation_type=>'T'
+,p_nav_bar_type=>'NAVBAR'
+,p_is_locked=>false
+,p_default_page_transition=>'NONE'
+,p_default_popup_transition=>'NONE'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(151),'')
+,p_css_file_urls=>'#IMAGE_PREFIX#legacy_ui/css/5.0#MIN#.css?v=#APEX_VERSION#'
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(51091686083369506)
+,p_theme_id=>17
+,p_theme_name=>'Sapphire'
+,p_theme_internal_name=>'SAPPHIRE'
+,p_ui_type_name=>'DESKTOP'
+,p_navigation_type=>'T'
+,p_nav_bar_type=>'NAVBAR'
+,p_is_locked=>false
+,p_default_page_template=>wwv_flow_api.id(51072977878369463)
+,p_error_template=>wwv_flow_api.id(51071798617369461)
+,p_printer_friendly_template=>wwv_flow_api.id(51073578103369463)
+,p_breadcrumb_display_point=>'REGION_POSITION_01'
+,p_sidebar_display_point=>'REGION_POSITION_02'
+,p_login_template=>wwv_flow_api.id(51070689808369452)
+,p_default_button_template=>wwv_flow_api.id(51090195360369495)
+,p_default_region_template=>wwv_flow_api.id(51079878726369480)
+,p_default_chart_template=>wwv_flow_api.id(51076892608369475)
+,p_default_form_template=>wwv_flow_api.id(51077168273369475)
+,p_default_reportr_template=>wwv_flow_api.id(51079878726369480)
+,p_default_tabform_template=>wwv_flow_api.id(51079878726369480)
+,p_default_wizard_template=>wwv_flow_api.id(51081688361369481)
+,p_default_menur_template=>wwv_flow_api.id(51075673805369473)
+,p_default_listr_template=>wwv_flow_api.id(51076571300369475)
+,p_default_irr_template=>wwv_flow_api.id(51078675232369480)
+,p_default_report_template=>wwv_flow_api.id(51083680554369486)
+,p_default_label_template=>wwv_flow_api.id(51089882279369494)
+,p_default_menu_template=>wwv_flow_api.id(51090969200369497)
+,p_default_calendar_template=>wwv_flow_api.id(51091180977369500)
+,p_default_list_template=>wwv_flow_api.id(51088480055369491)
+,p_default_option_label=>wwv_flow_api.id(51089882279369494)
+,p_default_required_label=>wwv_flow_api.id(51090080670369494)
+,p_default_page_transition=>'NONE'
+,p_default_popup_transition=>'NONE'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(17),'')
+,p_css_file_urls=>'#IMAGE_PREFIX#legacy_ui/css/5.0#MIN#.css?v=#APEX_VERSION#'
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(61375045642315731)
+,p_theme_id=>7
+,p_theme_name=>'Modern Blue'
+,p_theme_internal_name=>'MODERN_BLUE'
+,p_ui_type_name=>'DESKTOP'
+,p_navigation_type=>'T'
+,p_nav_bar_type=>'NAVBAR'
+,p_is_locked=>false
+,p_default_page_template=>wwv_flow_api.id(61355936769315707)
+,p_error_template=>wwv_flow_api.id(61354715169315706)
+,p_printer_friendly_template=>wwv_flow_api.id(61356535832315707)
+,p_breadcrumb_display_point=>'REGION_POSITION_01'
+,p_sidebar_display_point=>'REGION_POSITION_02'
+,p_login_template=>wwv_flow_api.id(61353619515315701)
+,p_default_button_template=>wwv_flow_api.id(61373521935315726)
+,p_default_region_template=>wwv_flow_api.id(61362840511315715)
+,p_default_chart_template=>wwv_flow_api.id(61359814151315713)
+,p_default_form_template=>wwv_flow_api.id(61360138269315713)
+,p_default_reportr_template=>wwv_flow_api.id(61362840511315715)
+,p_default_tabform_template=>wwv_flow_api.id(61362840511315715)
+,p_default_wizard_template=>wwv_flow_api.id(61364946315315717)
+,p_default_menur_template=>wwv_flow_api.id(61358615913315712)
+,p_default_listr_template=>wwv_flow_api.id(61359514254315713)
+,p_default_irr_template=>wwv_flow_api.id(61361632989315715)
+,p_default_report_template=>wwv_flow_api.id(61367023253315720)
+,p_default_label_template=>wwv_flow_api.id(61373230615315726)
+,p_default_menu_template=>wwv_flow_api.id(61374318341315726)
+,p_default_calendar_template=>wwv_flow_api.id(61374545508315728)
+,p_default_list_template=>wwv_flow_api.id(61371835074315723)
+,p_default_option_label=>wwv_flow_api.id(61373230615315726)
+,p_default_required_label=>wwv_flow_api.id(61373434902315726)
+,p_default_page_transition=>'NONE'
+,p_default_popup_transition=>'NONE'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(7),'')
+,p_css_file_urls=>'#IMAGE_PREFIX#legacy_ui/css/5.0#MIN#.css?v=#APEX_VERSION#'
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(1029439797522972141)
+,p_theme_id=>25
+,p_theme_name=>'Blue Responsive'
+,p_theme_internal_name=>'BLUE_RESPONSIVE'
+,p_ui_type_name=>'DESKTOP'
+,p_navigation_type=>'T'
+,p_nav_bar_type=>'NAVBAR'
+,p_is_locked=>false
+,p_default_page_template=>wwv_flow_api.id(1029399176266972114)
+,p_error_template=>wwv_flow_api.id(1029384874268972103)
+,p_printer_friendly_template=>wwv_flow_api.id(1029408798600972118)
+,p_breadcrumb_display_point=>'REGION_POSITION_01'
+,p_sidebar_display_point=>'REGION_POSITION_02'
+,p_login_template=>wwv_flow_api.id(1029379276723972100)
+,p_default_button_template=>wwv_flow_api.id(1029438183965972140)
+,p_default_region_template=>wwv_flow_api.id(1029428397293972132)
+,p_default_chart_template=>wwv_flow_api.id(1029428397293972132)
+,p_default_form_template=>wwv_flow_api.id(1029425479061972131)
+,p_default_reportr_template=>wwv_flow_api.id(1029428397293972132)
+,p_default_tabform_template=>wwv_flow_api.id(1029428397293972132)
+,p_default_menur_template=>wwv_flow_api.id(1029423971681972128)
+,p_default_listr_template=>wwv_flow_api.id(1029428397293972132)
+,p_default_irr_template=>wwv_flow_api.id(1029426794519972132)
+,p_default_report_template=>wwv_flow_api.id(1029431896127972137)
+,p_default_label_template=>wwv_flow_api.id(1029437700049972140)
+,p_default_menu_template=>wwv_flow_api.id(1029439369523972140)
+,p_default_calendar_template=>wwv_flow_api.id(1029439486267972140)
+,p_default_list_template=>wwv_flow_api.id(1029436580576972138)
+,p_default_option_label=>wwv_flow_api.id(1029437700049972140)
+,p_default_required_label=>wwv_flow_api.id(1029437999939972140)
+,p_default_page_transition=>'NONE'
+,p_default_popup_transition=>'NONE'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(25),'')
+,p_css_file_urls=>'#IMAGE_PREFIX#legacy_ui/css/5.0#MIN#.css?v=#APEX_VERSION#'
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(1032968800013990493)
+,p_theme_id=>50
+,p_theme_name=>'jQuery Mobile Smartphone'
+,p_theme_internal_name=>'JQUERY_MOBILE_SMARTPHONE'
+,p_ui_type_name=>'JQM_SMARTPHONE'
+,p_navigation_type=>'T'
+,p_nav_bar_type=>'NAVBAR'
+,p_is_locked=>false
+,p_default_page_template=>wwv_flow_api.id(1032960684481990487)
+,p_error_template=>wwv_flow_api.id(1032960684481990487)
+,p_printer_friendly_template=>wwv_flow_api.id(1032960684481990487)
+,p_default_button_template=>wwv_flow_api.id(1032968184745990492)
+,p_default_region_template=>wwv_flow_api.id(1032965074212990491)
+,p_default_chart_template=>wwv_flow_api.id(1032965074212990491)
+,p_default_form_template=>wwv_flow_api.id(1032965074212990491)
+,p_default_reportr_template=>wwv_flow_api.id(1032965677046990491)
+,p_default_tabform_template=>wwv_flow_api.id(1032965074212990491)
+,p_default_wizard_template=>wwv_flow_api.id(1032965074212990491)
+,p_default_irr_template=>wwv_flow_api.id(1032965074212990491)
+,p_default_report_template=>wwv_flow_api.id(1032965987932990492)
+,p_default_label_template=>wwv_flow_api.id(1032967593709990492)
+,p_default_calendar_template=>wwv_flow_api.id(1032968497646990493)
+,p_default_list_template=>wwv_flow_api.id(1032966899780990492)
+,p_default_option_label=>wwv_flow_api.id(1032967593709990492)
+,p_default_header_template=>wwv_flow_api.id(1032964493129990491)
+,p_default_footer_template=>wwv_flow_api.id(1032963881077990490)
+,p_default_required_label=>wwv_flow_api.id(1032967696136990492)
+,p_default_page_transition=>'SLIDE'
+,p_default_popup_transition=>'POP'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(50),'')
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(1733916219646258394)
+,p_theme_id=>150
+,p_theme_name=>'jQuery Mobile Smartphone'
+,p_theme_internal_name=>'JQUERY_MOBILE_SMARTPHONE'
+,p_ui_type_name=>'JQM_SMARTPHONE'
+,p_navigation_type=>'T'
+,p_nav_bar_type=>'NAVBAR'
+,p_is_locked=>false
+,p_default_page_template=>wwv_flow_api.id(1733908440482258388)
+,p_error_template=>wwv_flow_api.id(1733908440482258388)
+,p_printer_friendly_template=>wwv_flow_api.id(1733908440482258388)
+,p_default_button_template=>wwv_flow_api.id(1733915742212258393)
+,p_default_region_template=>wwv_flow_api.id(1733912944925258391)
+,p_default_chart_template=>wwv_flow_api.id(1733912944925258391)
+,p_default_form_template=>wwv_flow_api.id(1733912944925258391)
+,p_default_reportr_template=>wwv_flow_api.id(1733913537140258391)
+,p_default_tabform_template=>wwv_flow_api.id(1733912944925258391)
+,p_default_wizard_template=>wwv_flow_api.id(1733912944925258391)
+,p_default_irr_template=>wwv_flow_api.id(1733912944925258391)
+,p_default_report_template=>wwv_flow_api.id(1733913845701258391)
+,p_default_label_template=>wwv_flow_api.id(1733915144266258393)
+,p_default_calendar_template=>wwv_flow_api.id(1733915933224258393)
+,p_default_list_template=>wwv_flow_api.id(1733914418912258392)
+,p_default_option_label=>wwv_flow_api.id(1733915144266258393)
+,p_default_header_template=>wwv_flow_api.id(1733912339509258390)
+,p_default_footer_template=>wwv_flow_api.id(1733911723498258390)
+,p_default_required_label=>wwv_flow_api.id(1733915218995258393)
+,p_default_page_transition=>'SLIDEFADE'
+,p_default_popup_transition=>'POP'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(150),'')
+);
+wwv_flow_api.create_theme(
+ p_id=>wwv_flow_api.id(10351837619203450785)
+,p_theme_id=>152
+,p_theme_name=>'Cloud Apps'
+,p_theme_internal_name=>'CLOUD_APPS'
+,p_ui_type_name=>'DESKTOP'
+,p_navigation_type=>'T'
+,p_nav_bar_type=>'NAVBAR'
+,p_is_locked=>false
+,p_default_page_template=>wwv_flow_api.id(2727369208800172843)
+,p_error_template=>wwv_flow_api.id(10351816097515450761)
+,p_printer_friendly_template=>wwv_flow_api.id(10351818205833450763)
+,p_breadcrumb_display_point=>'REGION_POSITION_01'
+,p_sidebar_display_point=>'REGION_POSITION_02'
+,p_login_template=>wwv_flow_api.id(10351815323720450758)
+,p_default_button_template=>wwv_flow_api.id(10351820100254450765)
+,p_default_region_template=>wwv_flow_api.id(10351825296271450770)
+,p_default_form_template=>wwv_flow_api.id(10351822596766450767)
+,p_default_reportr_template=>wwv_flow_api.id(10351825296271450770)
+,p_default_tabform_template=>wwv_flow_api.id(10351825296271450770)
+,p_default_wizard_template=>wwv_flow_api.id(10351826810744450771)
+,p_default_menur_template=>wwv_flow_api.id(10351821124014450766)
+,p_default_irr_template=>wwv_flow_api.id(10351824113682450769)
+,p_default_report_template=>wwv_flow_api.id(10351834510677450779)
+,p_default_label_template=>wwv_flow_api.id(10351836212451450782)
+,p_default_menu_template=>wwv_flow_api.id(10351836605843450782)
+,p_default_calendar_template=>wwv_flow_api.id(10351837004424450782)
+,p_default_list_template=>wwv_flow_api.id(10351831296650450775)
+,p_default_option_label=>wwv_flow_api.id(10351836302611450782)
+,p_default_required_label=>wwv_flow_api.id(10351836511566450782)
+,p_default_page_transition=>'NONE'
+,p_default_popup_transition=>'NONE'
+,p_file_prefix => nvl(wwv_flow_application_install.get_static_theme_file_prefix(152),'')
+,p_css_file_urls=>'#IMAGE_PREFIX#legacy_ui/css/5.0#MIN#.css?v=#APEX_VERSION#'
+);
+wwv_flow_api.component_end;
+end;
+/

@@ -1,0 +1,75 @@
+prompt --application/pages/page_00476
+begin
+--   Manifest
+--     PAGE: 00476
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>100100
+,p_default_application_id=>100250
+,p_default_id_offset=>0
+,p_default_owner=>'ORBRGS'
+);
+wwv_flow_api.create_page(
+ p_id=>476
+,p_user_interface_id=>wwv_flow_api.id(1581890319240888879)
+,p_name=>'QItem_QR'
+,p_alias=>'QITEM-QR'
+,p_step_title=>'QItem_QR'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_overwrite_navigation_list=>'Y'
+,p_page_is_public_y_n=>'Y'
+,p_protection_level=>'C'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20220929130622'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(24406681301171115)
+,p_plug_name=>'QR'
+,p_region_template_options=>'#DEFAULT#:t-Region--scrollBody'
+,p_plug_template=>wwv_flow_api.id(47588528672858186)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_attribute_01=>'N'
+,p_attribute_02=>'HTML'
+);
+wwv_flow_api.create_page_item(
+ p_id=>wwv_flow_api.id(24406749384171116)
+,p_name=>'SHOWQR'
+,p_item_sequence=>10
+,p_item_plug_id=>wwv_flow_api.id(24406681301171115)
+,p_prompt=>'Showqr'
+,p_source=>'''Reazul islam'''
+,p_source_type=>'STATIC'
+,p_display_as=>'PLUGIN_COM.JANNAVRATIL.APEX.QR.ITEM'
+,p_label_alignment=>'BELOW'
+,p_field_alignment=>'LEFT-CENTER'
+,p_field_template=>wwv_flow_api.id(47629908389858329)
+,p_item_template_options=>'#DEFAULT#'
+,p_attribute_01=>'100'
+,p_attribute_02=>'#000000'
+,p_attribute_03=>'#FFFFFF'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(24406448036171113)
+,p_name=>'New'
+,p_event_sequence=>10
+,p_bind_type=>'bind'
+,p_bind_event_type=>'ready'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(24406592098171114)
+,p_event_id=>wwv_flow_api.id(24406448036171113)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'Y'
+,p_action=>'NATIVE_SHOW'
+,p_affected_elements_type=>'ITEM'
+,p_affected_elements=>'SHOWQR'
+);
+wwv_flow_api.component_end;
+end;
+/
