@@ -1,2 +1,0 @@
-# JTRIL
-Repository for JTRIL
