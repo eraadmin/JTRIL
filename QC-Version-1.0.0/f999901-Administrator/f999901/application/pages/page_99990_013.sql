@@ -1,0 +1,84 @@
+prompt --application/pages/page_99990_013
+begin
+--   Manifest
+--     PAGE: 99990
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>100100
+,p_default_application_id=>999901
+,p_default_id_offset=>0
+,p_default_owner=>'ORBRGS'
+);
+wwv_flow_api.create_page(
+ p_id=>99990113
+,p_user_interface_id=>wwv_flow_api.id(1120121017230736040)
+,p_name=>'Product Security : Group Name'
+,p_alias=>'PRODUCT-SECURITY-GROUP-NAME'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Product Security : Group Name'
+,p_autocomplete_on_off=>'OFF'
+,p_step_template=>wwv_flow_api.id(15982568616522500)
+,p_page_template_options=>'#DEFAULT#'
+,p_protection_level=>'C'
+,p_last_updated_by=>'ADMIN'
+,p_last_upd_yyyymmddhh24miss=>'20220616002711'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(32875406647615414)
+,p_plug_name=>'Wizard'
+,p_region_template_options=>'#DEFAULT#:t-Wizard--hideStepsXSmall'
+,p_component_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(1582253198556857860)
+,p_plug_display_sequence=>10
+,p_include_in_reg_disp_sel_yn=>'Y'
+,p_list_id=>wwv_flow_api.id(34445990889603605)
+,p_plug_source_type=>'NATIVE_LIST'
+,p_list_template_id=>wwv_flow_api.id(1582267095881857906)
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(32875506629615415)
+,p_button_sequence=>10
+,p_button_plug_id=>wwv_flow_api.id(32875406647615414)
+,p_button_name=>'CANCEL'
+,p_button_action=>'DEFINED_BY_DA'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
+,p_button_template_id=>wwv_flow_api.id(1582272254158857926)
+,p_button_image_alt=>'Cancel'
+,p_button_position=>'CLOSE'
+,p_warn_on_unsaved_changes=>null
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(32875873490615418)
+,p_button_sequence=>20
+,p_button_plug_id=>wwv_flow_api.id(32875406647615414)
+,p_button_name=>'Refresh'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#:t-Button--iconRight'
+,p_button_template_id=>wwv_flow_api.id(1582272254158857926)
+,p_button_image_alt=>'Refresh'
+,p_button_position=>'NEXT'
+,p_button_redirect_url=>'f?p=&APP_ID.:99990113:&SESSION.::&DEBUG.:::'
+);
+wwv_flow_api.create_page_da_event(
+ p_id=>wwv_flow_api.id(32875672073615416)
+,p_name=>'close'
+,p_event_sequence=>10
+,p_triggering_element_type=>'BUTTON'
+,p_triggering_button_id=>wwv_flow_api.id(32875506629615415)
+,p_bind_type=>'bind'
+,p_bind_event_type=>'click'
+);
+wwv_flow_api.create_page_da_action(
+ p_id=>wwv_flow_api.id(32875708801615417)
+,p_event_id=>wwv_flow_api.id(32875672073615416)
+,p_event_result=>'TRUE'
+,p_action_sequence=>10
+,p_execute_on_page_init=>'N'
+,p_action=>'NATIVE_DIALOG_CLOSE'
+);
+wwv_flow_api.component_end;
+end;
+/

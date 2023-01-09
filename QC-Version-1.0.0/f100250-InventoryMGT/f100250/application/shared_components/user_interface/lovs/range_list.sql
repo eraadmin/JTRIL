@@ -1,0 +1,82 @@
+prompt --application/shared_components/user_interface/lovs/range_list
+begin
+--   Manifest
+--     RANGE LIST
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>100100
+,p_default_application_id=>100250
+,p_default_id_offset=>0
+,p_default_owner=>'ORBRGS'
+);
+wwv_flow_api.create_list_of_values(
+ p_id=>wwv_flow_api.id(65080046172234758)
+,p_lov_name=>'RANGE LIST'
+,p_lov_query=>'.'||wwv_flow_api.id(65080046172234758)||'.'
+,p_location=>'STATIC'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65080316747234758)
+,p_lov_disp_sequence=>1
+,p_lov_disp_value=>'row(s)1-10'
+,p_lov_return_value=>'0110'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65080637720234759)
+,p_lov_disp_sequence=>2
+,p_lov_disp_value=>'row(s)11-20'
+,p_lov_return_value=>'1120'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65080933011234759)
+,p_lov_disp_sequence=>3
+,p_lov_disp_value=>'row(s)21-30'
+,p_lov_return_value=>'2130'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65081227742234759)
+,p_lov_disp_sequence=>4
+,p_lov_disp_value=>'row(s)31-40'
+,p_lov_return_value=>'3140'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65081513938234759)
+,p_lov_disp_sequence=>5
+,p_lov_disp_value=>'row(s)41-50'
+,p_lov_return_value=>'4150'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65081834219234759)
+,p_lov_disp_sequence=>6
+,p_lov_disp_value=>'row(s)51-60'
+,p_lov_return_value=>'5160'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65082135994234759)
+,p_lov_disp_sequence=>7
+,p_lov_disp_value=>'row(s)61-70'
+,p_lov_return_value=>'6170'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65082444148234759)
+,p_lov_disp_sequence=>8
+,p_lov_disp_value=>'row(s)71-80'
+,p_lov_return_value=>'7180'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65082742644234759)
+,p_lov_disp_sequence=>9
+,p_lov_disp_value=>'row(s)81-90'
+,p_lov_return_value=>'8190'
+);
+wwv_flow_api.create_static_lov_data(
+ p_id=>wwv_flow_api.id(65083014014234761)
+,p_lov_disp_sequence=>10
+,p_lov_disp_value=>'row(s)91-100'
+,p_lov_return_value=>'91100'
+);
+wwv_flow_api.component_end;
+end;
+/

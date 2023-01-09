@@ -1,0 +1,362 @@
+prompt --application/pages/page_00391
+begin
+--   Manifest
+--     PAGE: 00391
+--   Manifest End
+wwv_flow_api.component_begin (
+ p_version_yyyy_mm_dd=>'2021.10.15'
+,p_release=>'21.2.0'
+,p_default_workspace_id=>100100
+,p_default_application_id=>999901
+,p_default_id_offset=>0
+,p_default_owner=>'ORBRGS'
+);
+wwv_flow_api.create_page(
+ p_id=>391
+,p_user_interface_id=>wwv_flow_api.id(1120121017230736040)
+,p_name=>'Report on Item Master'
+,p_page_mode=>'MODAL'
+,p_step_title=>'Report on Item Master'
+,p_autocomplete_on_off=>'OFF'
+,p_page_template_options=>'#DEFAULT#'
+,p_last_updated_by=>'RILADM'
+,p_last_upd_yyyymmddhh24miss=>'20200504164635'
+);
+wwv_flow_api.create_page_plug(
+ p_id=>wwv_flow_api.id(68610622281709356)
+,p_plug_name=>'Report on Item Master'
+,p_region_name=>'STATIC_ID_ir'
+,p_region_template_options=>'#DEFAULT#'
+,p_plug_template=>wwv_flow_api.id(1582248360698857849)
+,p_plug_display_sequence=>10
+,p_query_type=>'SQL'
+,p_plug_source=>wwv_flow_string.join(wwv_flow_t_varchar2(
+'select ROWID, ',
+'I.ITEMCODE,',
+'decode (I.STATUSCD ,''ACT'',''Active'',''NOT'',''Inactive'') Status,',
+'decode (I.ITEMTYPE ,''S'',''Stock'',''N'',''Non Stock'') Item_Type,',
+'I.USERCODE,',
+'I.ITEMDES1,',
+'I.HUOMCODE,',
+'I.SALERATE,',
+'I.COSTRATE,',
+'(SELECT sum(CLBALQTY) CLBALQTY',
+'    FROM nmwhimas',
+'   WHERE compcode = i.COMPCODE',
+'     AND ITEMCODE = i.ITEMCODE ',
+'     AND clbalqty > 0) Available_Qty,          ',
+'decode (I.ITEMCLAS,''N'',''Normal'',''B'',''Batch'',''E'',''Enumerative'') Item_Class,',
+'I.COSTTYPE,',
+'I.COSTCODE,',
+'I.AREAVALU,',
+'I.SALEPERC,',
+'I.ITEMDES3,',
+'I.MFRSCNTR,',
+'I.RMNDRFLG,',
+'I.DESIGNCD,',
+'I.CHASISNO,',
+'I.ENGINENO,',
+'I.ITEMSIZE,',
+'I.WARECODE',
+'from NMITEMAS I',
+'where I.compcode =:compcode;',
+'  '))
+,p_plug_source_type=>'NATIVE_IR'
+,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
+,p_prn_content_disposition=>'ATTACHMENT'
+);
+wwv_flow_api.create_worksheet(
+ p_id=>wwv_flow_api.id(68611004174709357)
+,p_name=>'Report 1'
+,p_max_row_count=>'1000000'
+,p_max_row_count_message=>'The maximum row count for this report is #MAX_ROW_COUNT# rows.  Please apply a filter to reduce the number of records in your query.'
+,p_no_data_found_message=>'No data found.'
+,p_show_nulls_as=>'-'
+,p_pagination_type=>'ROWS_X_TO_Y'
+,p_pagination_display_pos=>'BOTTOM_RIGHT'
+,p_report_list_mode=>'TABS'
+,p_lazy_loading=>false
+,p_show_detail_link=>'N'
+,p_download_formats=>'CSV:HTML:XLSX:PDF'
+,p_enable_mail_download=>'Y'
+,p_owner=>'DLRADM'
+,p_internal_uid=>68611004174709357
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6685052099270320)
+,p_db_column_name=>'ROWID'
+,p_display_order=>1
+,p_column_identifier=>'A'
+,p_column_label=>'ROWID'
+,p_allow_sorting=>'N'
+,p_allow_filtering=>'N'
+,p_allow_highlighting=>'N'
+,p_allow_ctrl_breaks=>'N'
+,p_allow_aggregations=>'N'
+,p_allow_computations=>'N'
+,p_allow_charting=>'N'
+,p_allow_group_by=>'N'
+,p_allow_pivot=>'N'
+,p_column_type=>'OTHER'
+,p_display_text_as=>'HIDDEN'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+,p_rpt_show_filter_lov=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6685479474270321)
+,p_db_column_name=>'ITEMCODE'
+,p_display_order=>3
+,p_column_identifier=>'C'
+,p_column_label=>'Item Code'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6685851568270321)
+,p_db_column_name=>'USERCODE'
+,p_display_order=>5
+,p_column_identifier=>'E'
+,p_column_label=>'Usercode'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6686255141270321)
+,p_db_column_name=>'ITEMDES1'
+,p_display_order=>6
+,p_column_identifier=>'F'
+,p_column_label=>'Description'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6686660348270321)
+,p_db_column_name=>'HUOMCODE'
+,p_display_order=>7
+,p_column_identifier=>'G'
+,p_column_label=>'UOM'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6687085753270321)
+,p_db_column_name=>'SALERATE'
+,p_display_order=>8
+,p_column_identifier=>'H'
+,p_column_label=>'Salerate'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6687404275270323)
+,p_db_column_name=>'COSTRATE'
+,p_display_order=>9
+,p_column_identifier=>'I'
+,p_column_label=>'Costrate'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6687893147270323)
+,p_db_column_name=>'COSTTYPE'
+,p_display_order=>10
+,p_column_identifier=>'J'
+,p_column_label=>'Costtype'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6688214405270323)
+,p_db_column_name=>'COSTCODE'
+,p_display_order=>11
+,p_column_identifier=>'K'
+,p_column_label=>'Costcode'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6688682952270323)
+,p_db_column_name=>'AREAVALU'
+,p_display_order=>12
+,p_column_identifier=>'L'
+,p_column_label=>'Areavalu'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6689035892270323)
+,p_db_column_name=>'SALEPERC'
+,p_display_order=>13
+,p_column_identifier=>'M'
+,p_column_label=>'Saleperc'
+,p_column_type=>'NUMBER'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6689441072270325)
+,p_db_column_name=>'ITEMDES3'
+,p_display_order=>14
+,p_column_identifier=>'N'
+,p_column_label=>'Itemdes3'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6689811633270325)
+,p_db_column_name=>'MFRSCNTR'
+,p_display_order=>15
+,p_column_identifier=>'O'
+,p_column_label=>'Mfrscntr'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6690281711270325)
+,p_db_column_name=>'RMNDRFLG'
+,p_display_order=>16
+,p_column_identifier=>'P'
+,p_column_label=>'Rmndrflg'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6690626147270325)
+,p_db_column_name=>'DESIGNCD'
+,p_display_order=>17
+,p_column_identifier=>'Q'
+,p_column_label=>'Designcd'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6691098972270326)
+,p_db_column_name=>'CHASISNO'
+,p_display_order=>18
+,p_column_identifier=>'R'
+,p_column_label=>'Chasisno'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6691413685270326)
+,p_db_column_name=>'ENGINENO'
+,p_display_order=>19
+,p_column_identifier=>'S'
+,p_column_label=>'Engineno'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6691864143270326)
+,p_db_column_name=>'ITEMSIZE'
+,p_display_order=>20
+,p_column_identifier=>'T'
+,p_column_label=>'Itemsize'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6692236728270326)
+,p_db_column_name=>'WARECODE'
+,p_display_order=>21
+,p_column_identifier=>'U'
+,p_column_label=>'Warecode'
+,p_column_type=>'STRING'
+,p_heading_alignment=>'LEFT'
+,p_tz_dependent=>'N'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6684670894270320)
+,p_db_column_name=>'STATUS'
+,p_display_order=>41
+,p_column_identifier=>'X'
+,p_column_label=>'Status'
+,p_column_type=>'STRING'
+,p_column_alignment=>'CENTER'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6683457025270314)
+,p_db_column_name=>'ITEM_TYPE'
+,p_display_order=>51
+,p_column_identifier=>'Z'
+,p_column_label=>'Item Type'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6683894921270318)
+,p_db_column_name=>'ITEM_CLASS'
+,p_display_order=>61
+,p_column_identifier=>'AA'
+,p_column_label=>'Item Class'
+,p_column_type=>'STRING'
+);
+wwv_flow_api.create_worksheet_column(
+ p_id=>wwv_flow_api.id(6684249293270318)
+,p_db_column_name=>'AVAILABLE_QTY'
+,p_display_order=>71
+,p_column_identifier=>'AB'
+,p_column_label=>'Available Qty'
+,p_column_type=>'NUMBER'
+,p_column_alignment=>'RIGHT'
+);
+wwv_flow_api.create_worksheet_rpt(
+ p_id=>wwv_flow_api.id(68620031260738256)
+,p_application_user=>'APXWS_DEFAULT'
+,p_report_seq=>10
+,p_report_alias=>'66926'
+,p_status=>'PUBLIC'
+,p_is_default=>'Y'
+,p_report_columns=>'ITEMCODE:ITEMDES1:HUOMCODE:SALERATE:STATUS::ITEM_TYPE:ITEM_CLASS:AVAILABLE_QTY'
+);
+wwv_flow_api.create_worksheet_condition(
+ p_id=>wwv_flow_api.id(6693036009270328)
+,p_report_id=>wwv_flow_api.id(68620031260738256)
+,p_name=>'Row text contains ''SSSSS'''
+,p_condition_type=>'SEARCH'
+,p_allow_delete=>'Y'
+,p_expr=>'SSSSS'
+,p_enabled=>'Y'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(6693409930270329)
+,p_button_sequence=>30
+,p_button_plug_id=>wwv_flow_api.id(68610622281709356)
+,p_button_name=>'CREATE'
+,p_button_action=>'REDIRECT_PAGE'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(1582272837479857929)
+,p_button_is_hot=>'Y'
+,p_button_image_alt=>'Create'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=&APP_ID.:394:&SESSION.::&DEBUG.:394'
+,p_button_condition_type=>'NEVER'
+);
+wwv_flow_api.create_page_button(
+ p_id=>wwv_flow_api.id(6693823501270331)
+,p_button_sequence=>40
+,p_button_plug_id=>wwv_flow_api.id(68610622281709356)
+,p_button_name=>'Cancel'
+,p_button_action=>'REDIRECT_APP'
+,p_button_template_options=>'#DEFAULT#'
+,p_button_template_id=>wwv_flow_api.id(1582272837479857929)
+,p_button_image_alt=>'Cancel'
+,p_button_position=>'RIGHT_OF_IR_SEARCH_BAR'
+,p_button_redirect_url=>'f?p=100100:1:&SESSION.::&DEBUG.:RP::'
+);
+wwv_flow_api.component_end;
+end;
+/
